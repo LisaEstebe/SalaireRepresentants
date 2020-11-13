@@ -2,64 +2,67 @@ package representation;
 
 public class Representant {
 
-	private final int numero;
-	private final String nom;
-	private final String prenom;
-	private String adresse;
-	private float salaireFixe;
-        private ZoneGeographique secteur;
-        private float caMensuel[];
+    private final int numero;
+    private final String nom;
+    private final String prenom;
+    private String adresse;
+    private float salaireFixe;
+    private ZoneGeographique secteur;
+    private float caMensuel[];
 
-	public Representant(int numero, String nom, String prenom, ZoneGeographique secteur) {
-		this.numero = numero;
-		this.nom = nom;
-		this.prenom = prenom;
-	}
+    public Representant(int numero, String nom, String prenom, ZoneGeographique secteur) {
+        this.numero = numero;
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 
-	public int getNumero() {
-		return numero;
-	}
+    public int getNumero() {
+        return numero;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public String getAdresse() {
-		return adresse;
-	}
+    public String getAdresse() {
+        return adresse;
+    }
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
 
-	public float getSalaireFixe() {
-		return salaireFixe;
-	}
+    public float getSalaireFixe() {
+        return salaireFixe;
+    }
 
-	public void setSalaireFixe(float salaireFixe) {
-		this.salaireFixe = salaireFixe;
-	}
+    public void setSalaireFixe(float salaireFixe) {
+        this.salaireFixe = salaireFixe;
+    }
 
-	public ZoneGeographique getSecteur() {
-		// TODO: Implémenter cette méthode
-		return secteur;
-	}
+    public ZoneGeographique getSecteur() {
+        // TODO: Implémenter cette méthode
+        return secteur;
+    }
 
-	public void setSecteur(ZoneGeographique secteur) {
-		// TODO: Implémenter cette méthode
-		this.secteur= secteur;
-	}
+    public void setSecteur(ZoneGeographique secteur) {
+        // TODO: Implémenter cette méthode
+        this.secteur = secteur;
+    }
 
-	/**
-	 * Enregistre le CA de ce représentant pour un mois donné. 
-	 * @param mois le numéro du mois (de 0 à 11)
-	 * @param montant le CA réalisé pour ce mois (positif ou nul)
-	 **/
-	public void enregistrerCA(int mois, float montant) {
+
+/**
+ * Enregistre le CA de ce représentant pour un mois donné.
+ *
+ * @param mois le numéro du mois (de 0 à 11)
+ * @param montant le CA réalisé pour ce mois (positif ou nul)
+	 *
+ */
+public void enregistrerCA(int mois, float montant) {
 		// vérifier les paramètres
 		if (mois < 0 || mois > 11) {
 			throw new IllegalArgumentException("Le mois doit être compris entre 0 et 11");
@@ -88,7 +91,7 @@ public class Representant {
 	}
 
 	@Override
-	public String toString() {
+public String toString() {
 		return "Representant{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + '}';
 	}
 
