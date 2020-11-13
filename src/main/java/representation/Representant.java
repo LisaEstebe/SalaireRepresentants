@@ -7,6 +7,8 @@ public class Representant {
 	private final String prenom;
 	private String adresse;
 	private float salaireFixe;
+        private ZoneGeographique secteur;
+        private float caMensuel[];
 
 	public Representant(int numero, String nom, String prenom, ZoneGeographique secteur) {
 		this.numero = numero;
@@ -66,7 +68,9 @@ public class Representant {
 			throw new IllegalArgumentException("Le montant doit être positif ou null");
 		}
 		// TODO: Implémenter cette méthode
-		throw new UnsupportedOperationException("Pas encore implémenté");
+		 else {
+                    caMensuel[mois]=montant;
+                }
 	}
 
 	/**
@@ -77,7 +81,10 @@ public class Representant {
 	 */
 	public float salaireMensuel(int mois, float pourcentage) {
 		// TODO: Implémenter cette méthode
-		throw new UnsupportedOperationException("Pas encore implémenté");
+		float caDuMois=caMensuel[mois];
+                float salaireMois=caDuMois*pourcentage;
+                float salaireFinal = salaireMois+salaireFixe+secteur.getIndemniteRepas();
+                return salaireFinal;
 	}
 
 	@Override
