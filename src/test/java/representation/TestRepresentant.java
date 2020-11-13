@@ -83,23 +83,28 @@ public class TestRepresentant {
 
     @Test
     public void testMois() {
+        //on donne un mois qui n'est pas entre 0 et 11
         int mois = 13;
         try {
+        // On s'attend à recevoir une exception
             r.enregistrerCA(12, FIXE_BASTIDE);
-            fail();
+        // Si on arrive ici, c'est une erreur, le test doit échouer
+            fail("Un mois doit générer une exception");// Forcer l'échec du test
         } catch (IllegalArgumentException e) {
-
+            // Si on arrive ici, c'est normal, c'est le comportement attendu
         }
     }
 
     @Test
     public void testSalaire() {
+        //on donne un pourcentage <0
         float p = -1;
         try {
-            r.salaireMensuel(0, p);
-            fail();
+        // On s'attend à recevoir une exception
+            r.salaireMensuel(0, p);// Si on arrive ici, c'est une erreur, le test doit échouer
+            fail("Un pourcentage doit générer une exception");// Forcer l'échec du test
         } catch (IllegalArgumentException e) {
-
+            // Si on arrive ici, c'est normal, c'est le comportement attendu
         }
 
     }
